@@ -1,0 +1,158 @@
+body {
+  box-sizing: border-box;
+  background-color: #333;
+  font-family: sans-serif;
+}
+
+header, nav, main {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.heading1 {
+  color: #fff;
+}
+
+.heading2 {
+  color: #E44D26;
+}
+
+.wrapper {
+  background-color: #fff;
+  box-shadow: -4px -4px 6px #191616, 4px 4px 6px #191616, 4px -4px 6px #191616, -4px 4px 6px #191616;
+  margin-bottom: 5%;
+}
+
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 3% 0 0 1%;
+}
+
+.navbar-tab {
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #fff;
+  width: 31.3%;
+  text-align: center;
+  border: 1px solid #CCC;
+  border-radius: 5px 5px 0 0;
+  color: #333
+}
+
+nav li {
+  cursor: pointer;
+}
+
+nav li.active, nav li:hover {
+  border: 1px solid #67585E;
+  background-color: #67585E;
+}
+
+.search-area {
+  width: 100%;
+  position: relative;
+  top: -1px;
+  border-top: 1px solid #E4E0E1;
+  padding: 3% 0;
+}
+
+.search-area label {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #A61C1C;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 1px #ccc;
+}
+
+.search-box {
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  height: 32px;
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  text-indent: 32px;
+}
+
+.search-box .fa-search { 
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.profiles {
+  position: relative;
+  top: -1px;
+  border-top: 1px solid #CCC;
+  padding: 5px;
+}
+
+.profile {
+  display: block;
+  padding:5px;
+  border-radius: 5px;
+  margin: 3% 0;
+}
+
+.profile:hover {
+  background-color: #CCC;
+}
+
+.avatar {
+  width:50px;
+  height:50px;
+  vertical-align:middle;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.details {
+  display: inline-block;
+  width: 70%;
+  vertical-align: middle;
+}
+
+.display-name {
+  color: #F16529;
+}
+
+.status {
+  display:block;
+  color: #443A3E;
+  font-size: 0.8em
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-ban {
+  color: crimson;
+}
+
+.hidden {
+  display: none;
+}

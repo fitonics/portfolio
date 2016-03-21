@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pomodoro Clock</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Pomodoro Timer</h1>
+    <div class="line">
+      <div class="line-left"></div>
+      <div class="line-center"></div>
+      <div class="line-right"></div>
+    </div>
+  </header>
+  <main>
+    <div id="clock" class="dark">
+      <div class="display">
+        <div id="session">
+          Work Session
+        </div>
+        <div class="ampm"></div>
+        <div id="alarm"></div>
+        <div class="digits">
+          <div class="two">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+            <span class="d6"></span>
+            <span class="d7"></span>
+          </div>
+          <div class="five">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+            <span class="d6"></span>
+            <span class="d7"></span>
+          </div>
+          <div class="dots"></div>
+          <div class="zero">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+            <span class="d6"></span>
+            <span class="d7"></span>
+          </div>
+          <div class="zero">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+            <span class="d6"></span>
+            <span class="d7"></span>
+          </div>
+        </div>
+      </div>
+      <div class='buttons'>
+        <a class="button" title='Start'>
+          <i class="fa fa-play"></i>
+        </a>
+        <a class="button" title='Stop'>
+          <i class="fa fa-stop"></i>
+        </a>
+        <a class="button" title='Reset'>
+          <i class="fa fa-refresh"></i>
+        </a>
+        <a class="button active" title='Work Session'>
+          <i class="fa fa-users"></i>
+        </a>
+        <a class="button" title='Break Session'>
+          <i class="fa fa-coffee"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+  <audio preload="auto">
+    <source src="audio/ticktac.mp3" type="audio/mp3" />
+    <source src="audio/ticktac.ogg" type="audio/ogg" />
+  </audio>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

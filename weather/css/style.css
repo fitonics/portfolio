@@ -1,0 +1,416 @@
+/* General
+---------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body, main, section, h3, span, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+main, nav, header {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+html { 
+  background: url("../images/beach.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header and Navigation
+---------------------------------------------*/
+.header {
+  margin-bottom: 1em;
+}
+
+.header h1 {
+  text-align: center;
+  color: #FCD845;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.navbar-item{
+  margin-left: 0.8em;
+  width:200px;
+  height: 70px;
+  position: relative;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,0.1);
+  -webkit-perspective:800px;
+  perspective:800px;
+  display:inline-block;
+}
+
+.navbar-common {
+  color: white;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  font-size: 1em;
+  line-height: 70px;
+  width: 200px;
+  height:70px;
+  background: -webkit-linear-gradient(#30CCFC, #2CC5EF);
+  background: linear-gradient(#30CCFC, #2CC5EF);
+  box-shadow: inset 0 0 1px 1px #54AED0;
+  cursor: pointer;
+  position:absolute;
+  top:0; left:0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.cover {  
+  -webkit-transform-style: preserve-3d;  
+  transform-style: preserve-3d; 
+  -webkit-transform-origin: bottom center; 
+  -ms-transform-origin: bottom center; 
+  transform-origin: bottom center; 
+}
+
+.navbar-common:hover {
+  background: -webkit-linear-gradient(#33CEFE, #38D6FD);
+  background: linear-gradient(#33CEFE, #38D6FD);
+}
+
+.navbar-common:active {
+  font-size: 0.9em;
+}
+
+.open {
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.3),
+    inset 0 0 1px 1px #54AED0;
+  background: -webkit-linear-gradient(#33CEFE, #38D6FD);
+  background: linear-gradient(#33CEFE, #38D6FD);
+  color: #36D4FD;
+  text-shadow: none;
+}
+
+.open:hover {
+  color: #36D4FD;
+  text-shadow: none;
+  background: -webkit-linear-gradient(#33CEFE, #38D6FD);
+  background: linear-gradient(#33CEFE, #38D6FD);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; 
+}
+
+.search-container {
+  background: -webkit-linear-gradient(#EAEDF2, #F1F2F7);
+  background: linear-gradient(#EAEDF2, #F1F2F7);
+  height:70px;
+  width: 200px;
+  border: 2px solid white;
+  box-shadow: inset 0 2px 2px #D1D5D8,
+    0 0 1px rgba(0,0,0,0.1);
+  padding: 20px 10px;
+  position:absolute;
+  top:0; left:0;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #555;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #555;
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #555;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #555;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #555;
+}
+
+.search-container input {
+  font-size: 14px;
+  height: 30px;
+  width:120px;
+  text-indent: 10px;
+  color: #555;
+  background: #fff;
+  border: 1px solid #C1C1C1;
+  border-radius: 2px;
+}
+
+button {
+  background: -webkit-linear-gradient(#FDFDFD, #DEDCDF);
+  background: linear-gradient(#FDFDFD, #DEDCDF);
+  border: 1px solid #C3C7C8;
+  border-radius: 2px;
+  height:30px;
+  width:30px;
+  text-shadow: 1px 1px white;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+button:focus {
+  outline-width: 0px;
+}
+
+button:hover {
+  background: -webkit-linear-gradient(#DEDCDF, #FDFDFD);
+  background: linear-gradient(#DEDCDF, #FDFDFD);
+}
+
+button:active span {
+  font-size: 0.9em;
+}
+
+button span {
+  color: #0298D3;
+  font-size: 1.3em;
+}
+
+.divider {
+  margin: 1.5em auto 0;
+  width: 550px;
+  border-top: 1px solid #0374C4;
+  border-bottom: 1px solid dodgerblue;
+}
+
+/* Status & Progress
+---------------------------------------------*/
+.status {
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #0374C4;
+  text-align: center;
+  background: -webkit-linear-gradient(#EAEDF2, #F1F2F7);
+  background: linear-gradient(#EAEDF2, #F1F2F7);
+  position: relative;
+}
+
+/* Weather
+---------------------------------------------*/
+.weather-details {
+  position: relative;
+  top: 1.5em;
+  width: 550px;
+  height: 260px;
+  margin: 0 auto 1em;
+  border-radius: 8px;
+  background-color: rgba(51, 94, 137, 0.8);
+}
+
+.weather-head {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgba(252, 217, 45, 0.8);
+  width: 100%;
+  padding: 7px 8px;
+  height: 38px;
+}
+
+.weather-head h3 {
+  margin: 0;
+  background: url("../images/sphere.png") no-repeat;
+  padding-left: 30px;
+  color: #0A4558;
+  font-weight: 400;
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#units {
+  float: right;
+  font-size: 1.1em;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px #807833;
+  text-align: center;
+  color: #0A4558;
+  display: inline-block;
+  cursor: pointer;
+  height: 26px;
+  width: 26px;
+  line-height: 24px;
+}
+
+#units:active {
+  background-color: rgb(252, 217, 45);
+  box-shadow: 0px -1px 3px #807833;
+}
+
+#units:hover {
+  background-color: rgb(252, 217, 45);
+}
+
+.weather-head:after {
+  content: "";
+  clear: both;
+}
+
+.weather-now {
+  width: 100%;
+  height: 92px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.weather-now img {
+  margin: 0 1em;
+}
+
+.weather-now p {
+  color: #fff;
+}
+
+#degree-today {
+  font-size: 3em;
+  margin-right: 0.5em;
+}
+
+.weather-forcast {
+  width: 100%;
+  height: 50%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.forcast-day {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-right: 1px solid #386D9A;
+  padding-top: 0.5em;
+}
+
+.weather-forcast .forcast-day:last-child {
+  border-right: none;
+}
+
+.forcast-day p {
+  color: #fff;
+}
+
+.daily-temp {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 0 3px;
+}
+
+/* Media Queries
+---------------------------------------------*/
+@media screen and (max-width:600px) {
+  .navbar-item {
+    display: block;
+    margin:0 auto 1em;
+  }
+
+  .divider, .weather-details {
+    width: 80%;
+  }
+
+  .weather-details {
+    height: 420px;
+  }
+
+  .weather-head h3, #units {
+    font-size: 0.95em;
+  }
+  
+  #degree-today {
+    font-size: 2.5em;
+    margin-right: 0.3em;
+  }
+  
+  .weather-now img {
+    margin-left: 0.3em;
+    margin-right: 0.5em;
+  }
+
+  .weather-forcast {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    height: 290px;
+  }
+  
+  .forcast-day {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  
+  .forcast-day > p {
+    width: 15%;
+  }
+  
+  .daily-temp {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    width: 40%;
+  }
+}

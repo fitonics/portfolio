@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Khaled Noaman">
+  <title>Local Weather</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1>Local Weather</h1>
+    <nav class="navbar">
+      <ul>
+        <li id="geoloc" class="navbar-item">
+          <div class="navbar-common">
+            <span>Discover Location</span>
+          </div>
+        </li>
+        <li class="navbar-item">
+          <div class="search-container">
+            <input type="text" id="search" placeholder="Enter City">
+            <button><span class="fa fa-search"></span>  </button>
+          </div>
+          <div class="navbar-common cover">
+            <span class="icon-twitter">Specify City</span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="divider"></div>
+  </header>
+  <main>
+    <div class="status hidden">
+      <i class="fa fa-lg fa-spinner fa-pulse"></i>
+      <p></p>
+    </div>
+    <div class="weather-details hidden">
+      <div class="weather-current">
+      </div>
+      <div class="weather-forcast">
+      </div>
+    </div>
+  </main>
+  <script id="currenttpl" type="text/template">
+    {{#current}}
+      <div class="weather-head">
+        <h3>{{city}}</h3>
+        <a id="units">C</a>
+      </div>
+      <div class="weather-now">
+        <img src="{{icon}}" alt="icon for current weather">
+        <p class="temperature" id="degree-today">
+         <span>{{tempMetric}}&deg;</span>
+         <span class="hidden">{{tempImperial}}&deg;</span>
+        </p>
+        <p id="description-today">{{condition}}</p>
+      </div>
+    {{/current}}
+  </script>
+  <script id="forcasttpl" type="text/template">
+    {{#forcast}}
+      <div class="forcast-day">
+        <p>{{day}}</p>
+        <img src="{{icon}}" alt="icon for weather condition">
+        <div class="daily-temp">
+          <p class="temperature"><span>{{minTempMetric}}&deg;</span><span class="hidden">{{minTempImperial}}&deg;</span></p>
+          <p class="temperature"><span>{{maxTempMetric}}&deg;</span><span class="hidden">{{maxTempImperial}}&deg;</span></p>
+        </div>
+      </div>
+    {{/forcast}}
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

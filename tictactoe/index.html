@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Khaled Noaman">
+  <title>Tic Tac Toe</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header ribbon">
+      <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+      <div class="players">
+        <div class="player left">
+          <p>Player</p>
+          <p id="user-icon" class="icon"></p>
+        </div>
+        <div class="score left">
+          <p>Score</p>
+          <span id="user-score">0</span><span id="cpu-score">0</span>
+        </div>
+        <div class="player right">
+          <p>CPU</p>
+          <p id="cpu-icon" class="icon"></p>      
+        </div>
+        <div class="clearfix"></div>
+      </div> <!-- players -->
+      <div class="board">
+        <div class="square-wrapper left">
+          <div data-id="0" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+          <div data-id="1" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+          <div data-id="2" class="square"></div>
+        </div>
+        <div class="clearfix horizental-line"></div>
+        <div class="square-wrapper left">
+          <div data-id="3" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+          <div data-id="4" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+          <div data-id="5" class="square"></div>
+        </div>
+        <div class="clearfix horizental-line"></div>
+        <div class="square-wrapper left">
+          <div data-id="6" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+          <div data-id="7" class="square"></div>
+        </div>
+        <div class="vertical-line left"></div>
+        <div class="square-wrapper left">
+         <div data-id="8" class="square"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div> <!-- board -->
+      <div class="difficulty">
+        <label for="level">Difficulty Level: </label>
+        <select id="level">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>   
+      </div> <!-- difficulty -->
+    </main>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="scripts/board.js"></script>
+  <script src="scripts/engine.js"></script>
+  <script src="scripts/game.js"></script>
+</body>
+</html>

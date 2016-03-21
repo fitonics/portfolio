@@ -1,0 +1,210 @@
+/* General
+---------------------------------------------*/
+body {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  color: #000;
+  background: url('../images/bg.png') repeat;
+}
+
+a, a:hover, a:link, a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.common_bg {
+  background-color: #7ACCC8;
+}
+
+/* Header & Navigation
+---------------------------------------------*/
+header.main_nav {
+  padding: 4% 0;
+  text-align: center;
+}
+
+a.logo {
+  margin: 0;
+  font-size: 3em;
+  color: #FFF;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 3px solid #FFF;
+  display: inline-block;
+}
+
+a.logo:hover {
+  background-color: #FFF;
+  color: #7ACCC8;
+}
+
+/* Portfolio
+---------------------------------------------*/
+#portfolio {
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+
+.portfolio-header {
+  padding-bottom: 1em;
+}
+
+.main h2 {
+  text-align: center;
+}
+
+.project-container {
+  position: relative;
+  margin: 0 auto 2em;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.project {
+  width: 100%;
+  height: 100%;
+  box-shadow: -5px 5px 5px #aaa;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: rgba(63, 127, 124, 0.8);
+  -webkit-transform: rotateZ(180deg) rotateY(180deg);
+  transform: rotateZ(180deg) rotateY(180deg);
+}
+
+.back h3 {
+  margin-top: 0.3em;
+  font-style: italic;
+}
+
+.project-container:hover .project {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+/* Bio
+---------------------------------------------*/
+.bio {
+  padding: 3% 0;
+}
+
+.bio h2 {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.75em;
+  color: #3F7F7C;
+  margin: 0.7em 0;
+}
+
+.bio p {
+  color: #fff;
+  margin-top: 1em;
+}
+
+img.avatar {
+  border-radius: 50%;
+  border: 5px solid #FFF;
+}
+
+/* Footer
+---------------------------------------------*/
+footer {
+  padding: 2em 0 1em;
+}
+
+.social {
+  text-align: center;
+}
+
+.social li {
+  display: inline;
+  font-size: 2em;
+  padding: 0 0.2em;
+}
+
+.social li a {
+  color: #999;
+}
+
+p.copyright {
+  text-align: center;
+  padding: 2em 1em 0;
+}
+
+.social li a:hover .fa-linkedin-square {
+  color: #0084B6;
+}
+
+.social li a:hover .fa-github-square {
+  color: #000;
+}
+
+.social li a:hover .fa-envelope-square {
+  color: #FF0084;
+}
+
+/* Media Queries
+---------------------------------------------*/
+@media screen and (min-width:992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  a.logo, .bio h2 {
+    font-size: 2em;
+  }
+
+  #portfolio {
+    padding-top: 3em;
+    padding-bottom: 1.5em;
+  }
+
+  .project-container {
+    max-width: 460px;
+    max-height: 290px;
+    width: 75%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .project-container {
+    width: 90%;;
+  }
+}
+
+@media screen and (max-width:360px) {
+  .extra {
+    display: none;
+  }
+}

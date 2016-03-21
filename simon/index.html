@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Simon Game</title>
+  <link href='https://fonts.googleapis.com/css?family=VT323|Kaushan+Script|Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="common border"></div>
+      <div class="common color-1 button"></div>
+      <div class="common color-2 button"></div>
+      <div class="common color-3 button"></div>
+      <div class="common color-4 button"></div>
+      <div class="controls-wrapper">
+        <div class="inner">
+          <h1>Simon<sup>&reg;</sup></h1>
+          <div class="controls">
+            <div class="panel">
+              <div class="display">
+                <span id="counter">--</span>
+              </div>
+              <p>COUNT</p>
+            </div>
+            <div class="panel">
+              <a id="start"><span class="icon-play"></span></a>
+              <p>START</p>
+            </div>
+            <div class="panel">
+              <a id="mode"><span class="icon-lock"></span></a>
+              <p>STRICT</p>
+            </div>
+          </div>
+          <div>
+            <label class="toggle"><input type="checkbox"/><span class="label"></span><span class="switch"><span class="brushed-metal"></span></span></label>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="clip-svg">
+    <defs>
+      <clipPath id="clip-1" clipPathUnits="objectBoundingBox">
+        <polygon points="0 0, 0 0.475, 0.475 0.475, 0.475 0" />
+      </clipPath>
+      <clipPath id="clip-2" clipPathUnits="objectBoundingBox">
+        <polygon points="0.525 0, 0.525 0.475, 1 0.475, 1 0" />
+      </clipPath>
+      <clipPath id="clip-3" clipPathUnits="objectBoundingBox">
+        <polygon points="0 1, 0 0.525, 0.475 0.525, 0.475 1" />
+      </clipPath>
+      <clipPath id="clip-4" clipPathUnits="objectBoundingBox">
+        <polygon points="0.525 1, 0.525 0.525,  1 0.525, 1 1" />
+      </clipPath>
+    </defs>	
+  </svg>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

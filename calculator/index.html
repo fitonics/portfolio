@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Khaled Noaman">
+  <title>Calculator</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator">
+    <span class="header">Calculator</span>
+    <div class="display">0</div>
+    <a data-token-type="clearOperator" class="button clear">C</a>
+    <a data-token-type="unaryOperator" data-operation-name="negate" class="button">+/-</a>
+    <a data-token-type="unaryOperator" data-operation-name="sqrt" class="button">&#x221a;</a>
+    <a data-token-type="operand" class="button">7</a>
+    <a data-token-type="operand" class="button">8</a>
+    <a data-token-type="operand" class="button">9</a>
+    <a data-token-type="binaryOperator" data-operation-name="divide" class="button">/</a>
+    <a data-token-type="operand" class="button">4</a>
+    <a data-token-type="operand" class="button">5</a>
+    <a data-token-type="operand" class="button">6</a>
+    <a data-token-type="binaryOperator" data-operation-name="multiply" class="button">*</a>
+    <a data-token-type="operand" class="button">1</a>
+    <a data-token-type="operand" class="button">2</a>
+    <a data-token-type="operand" class="button">3</a>
+    <a data-token-type="binaryOperator" data-operation-name="subtract" class="button">-</a>
+    <a data-token-type="operand" class="button">0</a>
+    <a data-token-type="operand" class="button">.</a>
+    <a data-token-type="binaryOperator" data-operation-name="add" class="button">+</a>
+    <a data-token-type="resultOperator" class="button">=</a>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

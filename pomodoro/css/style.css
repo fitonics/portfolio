@@ -1,0 +1,522 @@
+/*=======================================
+ * Simple reset
+ *======================================*/
+html, body, header, main, session, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header, main, session {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=======================================
+ * General styles
+ *======================================*/
+html, body {
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  padding-top: 2em;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #7D3592;
+  font-family: 'Courgette', cursive;
+}
+
+body {
+  background: url(../images/bg.jpg);
+}
+
+/*=======================================
+ * Clock
+ *======================================*/
+
+.line {
+  padding-top:13px;
+  padding-bottom: 8px;
+}
+
+.line .line-left{
+  height: 1px;
+  width:52px;
+  position: relative;
+  float:left;
+  left: 50%;
+  margin-left: -53px;
+  margin-top: 3px;
+  background: #7D959F;
+}
+
+.line .line-right{
+  height: 1px;
+  width:52px;
+  position: relative;
+  float: right;
+  right: 50%;
+  margin-right: -60px;
+  margin-top: 3px;
+  background: #7D959F;
+}
+
+.line .line-center{
+  height: 8px;
+  width:8px;
+  border-radius: 50%;
+  left:50%;
+  position: absolute;
+  background: #7D3592;
+}
+
+.line::after {
+  content: '';
+  clear: both;
+}
+
+
+/*=======================================
+ * Clock
+ *======================================*/
+#clock{
+  width: 300px;
+  padding: 25px;
+  margin: 60px auto;
+  position:relative;
+  color:#cacaca;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #862077), color-stop(100%, #140027));
+  background-image: -webkit-linear-gradient(#862077, #140027);
+  background-image: linear-gradient(#862077, #140027);
+}
+
+#clock .display{
+  text-align:center;
+  padding: 40px 10px 20px;
+  border-radius:6px;
+  position:relative;
+  height: 54px;
+  background-color:#0f1620;
+  box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #2d3642;
+}
+
+#session {
+  font-size: 0.9em;
+  font-family: sans-serif;
+  position:absolute;
+  width:100%;
+  top:8px;
+  left:0;
+  text-align:center;
+  color: #CACAE1;
+}
+
+#alarm{
+  width:16px;
+  height:16px;
+  bottom:20px;
+  background:url('../images/alarm_dark.jpg');
+  position:absolute; 
+  opacity:0.2;
+}
+
+/*=======================================
+ * Digits
+ *======================================*/
+.digits div{
+  text-align:left;
+  position:relative;
+  width: 28px;
+  height:50px;
+  display:inline-block;
+  margin:0 4px;
+}
+
+.digits span{
+  opacity:0;
+  position:absolute;
+  background-color:#cacaca;
+  border-color:#cacaca;	
+  -webkit-transition:0.25s;
+  transition:0.25s;
+}
+
+.digits span:before, .digits span:after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:0;
+  border:5px solid transparent;
+}
+
+.digits .d1 {
+  height:5px;
+  width:16px;
+  top:0;
+  left:6px;
+}
+
+.digits .d1:before {
+  border-width:0 5px 5px 0;
+  border-right-color:inherit;
+  left:-5px;
+}
+
+.digits .d1:after {
+  border-width:0 0 5px 5px;
+  border-left-color:inherit;
+  right:-5px;
+}
+
+.digits .d2 {
+  height:5px;
+  width:16px;
+  top:24px;
+  left:6px;
+}
+
+.digits .d2:before {
+  border-width:3px 4px 2px;
+  border-right-color:inherit;
+  left:-8px;
+}
+
+.digits .d2:after {
+  border-width:3px 4px 2px;
+  border-left-color:inherit;
+  right:-8px;
+}
+
+.digits .d3 {
+  height:5px;
+  width:16px;
+  top:48px;
+  left:6px;
+}
+
+.digits .d3:before {
+  border-width:5px 5px 0 0;
+  border-right-color:inherit;
+  left:-5px;
+}
+
+.digits .d3:after {
+  border-width:5px 0 0 5px;
+  border-left-color:inherit;
+  right:-5px;
+}
+
+.digits .d4 {
+  width:5px;
+  height:14px;
+  top:7px;
+  left:0;
+}
+
+.digits .d4:before {
+  border-width:0 5px 5px 0;
+  border-bottom-color:inherit;
+  top:-5px;
+}
+
+.digits .d4:after {
+  border-width:0 0 5px 5px;
+  border-left-color:inherit;
+  bottom:-5px;
+}
+
+.digits .d5 {
+  width:5px;
+  height:14px;
+  top:7px;
+  right:0;
+}
+
+.digits .d5:before {
+  border-width:0 0 5px 5px;
+  border-bottom-color:inherit;
+  top:-5px;
+}
+
+.digits .d5:after {
+  border-width:5px 0 0 5px;
+  border-top-color:inherit;
+  bottom:-5px;
+}
+
+.digits .d6 {
+  width:5px;
+  height:14px;
+  top:32px;
+  left:0;
+}
+
+.digits .d6:before {
+  border-width:0 5px 5px 0;
+  border-bottom-color:inherit;
+  top:-5px;
+}
+
+.digits .d6:after {
+  border-width:0 0 5px 5px;
+  border-left-color:inherit;
+  bottom:-5px;
+}
+
+.digits .d7 {
+  width:5px;
+  height:14px;
+  top:32px;
+  right:0;
+}
+
+.digits .d7:before {
+  border-width:0 0 5px 5px;
+  border-bottom-color:inherit;
+  top:-5px;
+}
+
+.digits .d7:after {
+  border-width:5px 0 0 5px;
+  border-top-color:inherit;
+  bottom:-5px;
+}
+
+/* 1 */
+
+.digits div.one .d5,
+.digits div.one .d7{
+	opacity:1;
+}
+
+/* 2 */
+
+.digits div.two .d1,
+.digits div.two .d5,
+.digits div.two .d2,
+.digits div.two .d6,
+.digits div.two .d3{
+  opacity:1;
+}
+
+/* 3 */
+
+.digits div.three .d1,
+.digits div.three .d5,
+.digits div.three .d2,
+.digits div.three .d7,
+.digits div.three .d3{
+  opacity:1;
+}
+
+/* 4 */
+.digits div.four .d5,
+.digits div.four .d2,
+.digits div.four .d4,
+.digits div.four .d7{
+  opacity:1;
+}
+
+/* 5 */
+.digits div.five .d1,
+.digits div.five .d2,
+.digits div.five .d4,
+.digits div.five .d3,
+.digits div.five .d7{
+  opacity:1;
+}
+
+/* 6 */
+.digits div.six .d1,
+.digits div.six .d2,
+.digits div.six .d4,
+.digits div.six .d3,
+.digits div.six .d6,
+.digits div.six .d7{
+  opacity:1;
+}
+
+/* 7 */
+.digits div.seven .d1,
+.digits div.seven .d5,
+.digits div.seven .d7{
+  opacity:1;
+}
+
+/* 8 */
+.digits div.eight .d1,
+.digits div.eight .d2,
+.digits div.eight .d3,
+.digits div.eight .d4,
+.digits div.eight .d5,
+.digits div.eight .d6,
+.digits div.eight .d7{
+  opacity:1;
+}
+
+/* 9 */
+.digits div.nine .d1,
+.digits div.nine .d2,
+.digits div.nine .d3,
+.digits div.nine .d4,
+.digits div.nine .d5,
+.digits div.nine .d7{
+  opacity:1;
+}
+
+/* 0 */
+.digits div.zero .d1,
+.digits div.zero .d3,
+.digits div.zero .d4,
+.digits div.zero .d5,
+.digits div.zero .d6,
+.digits div.zero .d7{
+  opacity:1;
+}
+
+/*=======================================
+ * Dots
+ *======================================*/
+#clock .digits div.dots{
+  width: 5px;
+}
+
+#clock .digits div.dots:before,
+#clock .digits div.dots:after{
+  width:5px;
+  height:5px;
+  content:'';
+  position:absolute;
+  left:0;
+  top:14px;
+  background-color:#cacaca;
+}
+
+#clock .digits div.dots:after{
+  top:34px;
+}
+
+
+/*=======================================
+ * Buttons
+ *======================================*/
+.buttons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  width: 45px;
+  height: 31px;
+  padding-top: 8px;
+  color: #a675b3;
+  text-align: center;
+  line-height: 26px;
+  font-size: 0.8em;
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b2751), color-stop(100%, #271739));
+  background-image: -webkit-linear-gradient(#3b2751, #271739);
+  background-image: linear-gradient(#3b2751, #271739);
+  text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
+}
+
+.button:hover, .buttons:focus {
+  -webkit-transition: color 200ms linear;
+  transition: color 200ms linear;
+  -webkit-transition: text-shadow 500ms linear;
+  transition: text-shadow 500ms linear;
+  color: #caadd2;
+  text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
+}
+
+.button.active, .button:active {
+  box-shadow: 0 9px 16px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #170c22, 0 2px 1px 0 rgba(121, 65, 135, 0.5), inset 0 0 4px 3px rgba(15, 8, 22, 0.2);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1f132e), color-stop(100%, #311d47));
+  background-image: -webkit-linear-gradient(#1f132e, #311d47);
+  background-image: linear-gradient(#1f132e, #311d47);
+  text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
+  color: #e4e3ce;
+}
+
+.button:first-of-type {
+  border-radius: 7px 0 0 7px;
+}
+
+.button:last-of-type {
+  border-radius: 0 7px 7px 0;
+}
+
+.button i {
+  pointer-events: none;
+}
+
+/*=======================================
+ * Animation
+ *======================================*/
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+
+@media screen and (max-width:350px) {
+  #clock{
+    width: 270px;
+    padding: 15px;
+  }
+}
