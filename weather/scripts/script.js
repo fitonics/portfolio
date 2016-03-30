@@ -13,7 +13,7 @@
         i;
 
       for (i = 0; i < id.length; i += 1) {
-        arr.push(String.fromCodePoint(id.codePointAt(i) - 13));
+        arr.push(String.fromCharCode(id.charCodeAt(i) - 13));
       }
     
       return arr.join('');
