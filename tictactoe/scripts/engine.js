@@ -146,7 +146,14 @@ var netlightened = netlightened || {};
     function hasWinningSequences(moves, seqList) {
       var i, j, seq, matchList = seqList.slice();
 
-      matchList.fill(0);
+      if (matchList.fill) {
+        matchList.fill(0);
+      } else {
+        for (i = 0; i < matchList.length; ++i) {
+          matchList[i] = 0;
+        }
+      }
+
       for (i = 0; i < moves.length && matchList.indexOf(0) !== -1; ++i) {
         seq = moves[i].join('');
         for (j = 0; j < seqList.length; j++) {
